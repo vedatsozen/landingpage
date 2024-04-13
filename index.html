@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERO SECTION</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li>
+            <a id="homea" href="#">Home</a>
+        </li>
+        <li>
+            <a id="docsa" href="#">Docs</a>
+        </li>
+        <li>
+            <a id="referencesa" href="#">References</a>
+        </li>
+        <li>
+            <a id="contacta" href="#">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<header id="header">
+    <div>
+    <h1>Lorem ipsum, dolor sit <span> amet consectetur </span> adipisicing elit.</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+    </div>
+    <div>
+        <img id="headerimg" src="headerimage.png">
+    </div>
+
+</header>
+
+<section id="docs">
+
+<h1>Documentation</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quo accusamus ducimus ipsum, iste eum. Ab repudiandae blanditiis, debitis perspiciatis asperiores, exercitationem quis ipsam earum nam numquam sint cum amet.</p>
+
+<div id="docscards">
+
+    <div class="docscardsdiv">
+        <img src="docscard1.jpg" class="docscardimg">
+        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi, modi illum laboriosam consequuntur, cum dolores odio obcaecati tempora repellat aliquam quae perspiciatis quibusdam libero magnam magni iusto ipsa velit?</p>
+     </div>
+
+    <div class="docscardsdiv">
+        <img src="docscard2.jpg" class="docscardimg">
+        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi, modi illum laboriosam consequuntur, cum dolores odio obcaecati tempora repellat aliquam quae perspiciatis quibusdam libero magnam magni iusto ipsa velit?</p>
+        </div>
+
+    <div class="docscardsdiv">
+        <img src="docscard3.jpeg" class="docscardimg">
+        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quasi, modi illum laboriosam consequuntur, cum dolores odio obcaecati tempora repellat aliquam quae perspiciatis quibusdam libero magnam magni iusto ipsa velit?</p>
+        
+    </div>
+</div>
+
+</section>
+
+<section id="references">
+    <div>
+    <h1>REFERENCES</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+    </div>
+
+</section>
+
+<section id="contact">
+    <div>
+    <h1>CONTACT</h1>
+    <p><i class="bi bi-signpost"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p><i class="bi bi-telephone"></i> +090 000 000 00 00</p>
+    <p><i class="bi bi-envelope"></i> abcdefg@gmail.com</p>
+    </div>
+
+</section>
+
+<i class="gotop bi bi-arrow-up-square" onclick="gotop()"></i>
+<script>
+
+let docsa = document.getElementById("docsa");
+let docs = document.getElementById("docs");
+
+$(document).ready(() => {
+
+    $("#homea").click(() => {
+        $('html, body').animate({
+            scrollTop: $("header").offset().top
+        }, 600);
+    });
+
+    $("#docsa").click(() => {
+        $('html, body').animate({
+            scrollTop: $("#docs").offset().top
+        }, 600);
+    });
+
+    $("#referencesa").click(() => {
+        $('html, body').animate({
+            scrollTop: $("#references").offset().top
+        }, 600);
+    });
+
+    $("#contacta").click(() => {
+        $('html, body').animate({
+            scrollTop: $("#contact").offset().top
+        }, 600);
+    });
+
+    $(".docscardsdiv").mouseover(function() {
+    $(this).children("img").addClass("scaleimg")
+    });
+
+    $(".docscardsdiv").mouseleave(function() {
+    $(this).children("img").removeClass("scaleimg")
+    });
+
+
+
+window.addEventListener("scroll",function() {
+
+const yukariok = document.getElementById("yukariok");
+
+let scrollY = window.scrollY;
+
+if ( scrollY > 200 ) {
+    yukariok.style.display = "block";
+}
+
+else {
+    yukariok.style.display = "none";
+}
+
+});
+
+});
+
+function gotop() {
+
+    $(".gotop").click(() => {
+        $('html, body').animate({
+            scrollTop: $("#header").offset().top
+        }, 600);
+    });
+
+}
+</script>
+</body>
+</html>
